@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity — SkillSwap</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="activity">
+
+  <header class="site-header">
+    <div class="tape-strip"></div>
+    <div class="header-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">S</span>SkillSwap<span class="brand-tag">Skill Exchange Network</span></a>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="skills.html">Skills</a>
+        <a href="goals.html">Goals</a>
+        <a href="activity.html" class="active">Activity</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+
+      <div class="page-head">
+        <div>
+          <h1>Activity</h1>
+          <p>Log every teaching or learning session, then check your history and analytics below.</p>
+        </div>
+        <button class="btn btn-outline" id="export-btn">Export learning record</button>
+      </div>
+
+      <section class="pin-card panel pin-teal">
+        <div class="panel-head"><h3>Log a session</h3></div>
+        <form id="activity-form">
+          <div class="field-grid">
+            <div class="field">
+              <label for="a-type">Type</label>
+              <select id="a-type">
+                <option value="taught">I taught</option>
+                <option value="learned">I learned</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="a-skill">Skill</label>
+              <input type="text" id="a-skill" placeholder="e.g. Public Speaking" required>
+            </div>
+            <div class="field">
+              <label for="a-partner">Partner</label>
+              <select id="a-partner"></select>
+            </div>
+            <div class="field">
+              <label for="a-date">Date</label>
+              <input type="date" id="a-date">
+            </div>
+            <div class="field">
+              <label for="a-minutes">Duration (minutes)</label>
+              <input type="number" id="a-minutes" min="5" value="30">
+            </div>
+            <div class="field full">
+              <label for="a-notes">Notes (optional)</label>
+              <textarea id="a-notes" placeholder="What did the session cover?"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-teal">Log session</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="stat-row">
+        <div class="pin-card stat-card pin-teal">
+          <div class="stat-label">Total sessions</div>
+          <div class="stat-value" id="an-total">0</div>
+          <div class="stat-sub">All time</div>
+        </div>
+        <div class="pin-card stat-card pin-amber">
+          <div class="stat-label">Hours spent learning</div>
+          <div class="stat-value" id="an-hours">0</div>
+          <div class="stat-sub">Taught + learned</div>
+        </div>
+        <div class="pin-card stat-card pin-teal">
+          <div class="stat-label">This week</div>
+          <div class="stat-value" id="an-week">0</div>
+          <div class="stat-sub">Sessions in last 7 days</div>
+        </div>
+        <div class="pin-card stat-card pin-amber">
+          <div class="stat-label">Current streak</div>
+          <div class="stat-value" id="an-streak">0</div>
+          <div class="stat-sub">Consecutive days</div>
+        </div>
+      </div>
+
+      <section class="pin-card panel pin-amber">
+        <div class="panel-head"><h2>Activity by category</h2></div>
+        <div class="bar-chart" id="category-chart"></div>
+      </section>
+
+      <section class="pin-card panel">
+        <div class="panel-head">
+          <h2>Session history</h2>
+          <span class="count" id="history-count"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="ledger">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Skill</th>
+                <th>Partner</th>
+                <th>Date</th>
+                <th>Duration</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="history-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">SkillSwap Community Skill Exchange &amp; Learning Network — built with HTML, CSS &amp; JavaScript.</footer>
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
