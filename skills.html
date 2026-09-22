@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — SkillSwap</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="skills">
+
+  <header class="site-header">
+    <div class="tape-strip"></div>
+    <div class="header-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">S</span>SkillSwap<span class="brand-tag">Skill Exchange Network</span></a>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="goals.html">Goals</a>
+        <a href="activity.html">Activity</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+
+      <div class="page-head">
+        <div>
+          <h1>Skills</h1>
+          <p>List what you can teach and what you'd like to learn, then discover community members who match.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <section class="pin-card panel pin-teal">
+          <div class="panel-head"><h3>Skills I can teach</h3></div>
+          <form id="teach-form">
+            <div class="field-grid">
+              <div class="field full">
+                <label for="t-name">Skill name</label>
+                <input type="text" id="t-name" placeholder="e.g. Python Programming" required>
+              </div>
+              <div class="field">
+                <label for="t-category">Category</label>
+                <select id="t-category"></select>
+              </div>
+              <div class="field">
+                <label for="t-level">Your level</label>
+                <select id="t-level">
+                  <option>Beginner</option>
+                  <option selected>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-teal btn-sm">Add skill</button>
+            </div>
+          </form>
+          <ul class="skill-list" id="teach-list" style="margin-top:16px;"></ul>
+        </section>
+
+        <section class="pin-card panel pin-amber">
+          <div class="panel-head"><h3>Skills I want to learn</h3></div>
+          <form id="learn-form">
+            <div class="field-grid">
+              <div class="field full">
+                <label for="l-name">Skill name</label>
+                <input type="text" id="l-name" placeholder="e.g. Graphic Design" required>
+              </div>
+              <div class="field">
+                <label for="l-category">Category</label>
+                <select id="l-category"></select>
+              </div>
+              <div class="field">
+                <label for="l-priority">Priority</label>
+                <select id="l-priority">
+                  <option>Low</option>
+                  <option selected>Medium</option>
+                  <option>High</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-amber btn-sm">Add to wishlist</button>
+            </div>
+          </form>
+          <ul class="skill-list" id="learn-list" style="margin-top:16px;"></ul>
+        </section>
+      </div>
+
+      <section class="pin-card panel" style="margin-top:6px;">
+        <div class="panel-head">
+          <h2>Discover the community</h2>
+        </div>
+        <p class="hint">Members whose skills overlap with yours are ranked highest. Search or filter to browse everyone.</p>
+        <div class="toolbar">
+          <input type="search" id="discover-search" placeholder="Search by name or skill…">
+          <select id="discover-category"><option value="">All categories</option></select>
+          <span class="count" id="discover-count"></span>
+        </div>
+        <div class="member-grid" id="discovery-grid"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">SkillSwap Community Skill Exchange &amp; Learning Network — built with HTML, CSS &amp; JavaScript.</footer>
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
