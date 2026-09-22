@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goals — SkillSwap</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="goals">
+
+  <header class="site-header">
+    <div class="tape-strip"></div>
+    <div class="header-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">S</span>SkillSwap<span class="brand-tag">Skill Exchange Network</span></a>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="skills.html">Skills</a>
+        <a href="goals.html" class="active">Goals</a>
+        <a href="activity.html">Activity</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+
+      <div class="page-head">
+        <div>
+          <h1>Learning goals</h1>
+          <p>Set a target, track your progress, and see the achievements you've unlocked along the way.</p>
+        </div>
+      </div>
+
+      <section class="pin-card panel pin-amber">
+        <div class="panel-head"><h3>Add a learning goal</h3></div>
+        <form id="goal-form">
+          <div class="field-grid">
+            <div class="field full">
+              <label for="g-title">Goal</label>
+              <input type="text" id="g-title" placeholder="e.g. Get confident with Adobe Photoshop basics" required>
+            </div>
+            <div class="field">
+              <label for="g-skill">Related skill (optional)</label>
+              <input type="text" id="g-skill" placeholder="e.g. Graphic Design">
+            </div>
+            <div class="field">
+              <label for="g-target">Target date</label>
+              <input type="date" id="g-target">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-amber">Add goal</button>
+            <span class="form-note">You can bump progress or mark it complete any time.</span>
+          </div>
+        </form>
+      </section>
+
+      <section style="margin-bottom:20px;">
+        <div class="panel-head" style="margin-bottom:14px;"><h2>Your goals</h2></div>
+        <div class="goal-grid" id="goals-grid"></div>
+      </section>
+
+      <section class="pin-card panel pin-teal" style="margin-top:8px;">
+        <div class="panel-head"><h2>Achievements</h2></div>
+        <div class="badge-grid" id="achievements-grid"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">SkillSwap Community Skill Exchange &amp; Learning Network — built with HTML, CSS &amp; JavaScript.</footer>
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
