@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillSwap — Community Skill Exchange &amp; Learning Network</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+
+  <header class="site-header">
+    <div class="tape-strip"></div>
+    <div class="header-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">S</span>SkillSwap<span class="brand-tag">Skill Exchange Network</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="skills.html">Skills</a>
+        <a href="goals.html">Goals</a>
+        <a href="activity.html">Activity</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+
+      <section class="hero">
+        <div>
+          <h1>Trade what you know for <span>what you want to learn.</span></h1>
+          <p>SkillSwap connects students and professionals who teach with those who want to learn — track your skills, find matching partners, and log every session in one place.</p>
+          <div class="hero-actions">
+            <a href="skills.html" class="btn btn-teal">Find a learning partner</a>
+            <a href="activity.html" class="btn btn-outline">Log a session</a>
+          </div>
+        </div>
+        <div class="pin-card hero-card pin-amber">
+          <div class="fig-row"><span>Skills you teach</span><span id="stat-teach-mini">—</span></div>
+          <div class="fig-row"><span>Skills you're learning</span><span id="stat-learn-mini">—</span></div>
+          <div class="fig-row"><span>Active goals</span><span id="stat-goals-mini">—</span></div>
+        </div>
+      </section>
+
+      <div class="stat-row">
+        <div class="pin-card stat-card pin-teal">
+          <div class="stat-label">Skills you teach</div>
+          <div class="stat-value" id="stat-teach">0</div>
+          <div class="stat-sub">Listed on your profile</div>
+        </div>
+        <div class="pin-card stat-card pin-amber">
+          <div class="stat-label">Skills you're learning</div>
+          <div class="stat-value" id="stat-learn">0</div>
+          <div class="stat-sub">On your wishlist</div>
+        </div>
+        <div class="pin-card stat-card pin-teal">
+          <div class="stat-label">Active learning goals</div>
+          <div class="stat-value" id="stat-goals">0</div>
+          <div class="stat-sub">In progress</div>
+        </div>
+        <div class="pin-card stat-card pin-amber warn">
+          <div class="stat-label">Current streak</div>
+          <div class="stat-value" id="stat-streak">0</div>
+          <div class="stat-sub" id="stat-streak-sub">days in a row</div>
+        </div>
+      </div>
+
+      <div class="quick-grid">
+        <a href="skills.html" class="pin-card quick-card pin-teal">
+          <span class="q-icon">🧩</span>
+          <h3>Skills</h3>
+          <p>Manage what you teach and learn, and discover the community.</p>
+        </a>
+        <a href="goals.html" class="pin-card quick-card pin-amber">
+          <span class="q-icon">🎯</span>
+          <h3>Goals</h3>
+          <p>Set learning goals and track your progress toward them.</p>
+        </a>
+        <a href="activity.html" class="pin-card quick-card pin-teal">
+          <span class="q-icon">📝</span>
+          <h3>Activity</h3>
+          <p>Log sessions and see your learning analytics.</p>
+        </a>
+        <a href="profile.html" class="pin-card quick-card pin-amber">
+          <span class="q-icon">👤</span>
+          <h3>Profile</h3>
+          <p>Update your details, education, and interests.</p>
+        </a>
+      </div>
+
+      <div class="two-col">
+        <section class="pin-card panel">
+          <div class="panel-head"><h2>Recommended partners</h2></div>
+          <div id="dash-partners"></div>
+        </section>
+
+        <section class="pin-card panel">
+          <div class="panel-head"><h2>Recent activity</h2></div>
+          <ul class="activity-list" id="activity-feed"></ul>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">SkillSwap Community Skill Exchange &amp; Learning Network — built with HTML, CSS &amp; JavaScript.</footer>
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
